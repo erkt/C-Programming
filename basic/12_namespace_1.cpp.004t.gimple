@@ -1,0 +1,293 @@
+(static initializers for 12_namespace_1.cpp) ()
+{
+  __static_initialization_and_destruction_0 (1, 65535);
+}
+
+
+void __static_initialization_and_destruction_0(int, int) (int __initialize_p, int __priority)
+{
+  void (*<Tb9>) (void *) __comp_dtor .0;
+
+  if (__initialize_p == 1) goto <D.21003>; else goto <D.21004>;
+  <D.21003>:
+  if (__priority == 65535) goto <D.21005>; else goto <D.21006>;
+  <D.21005>:
+  std::ios_base::Init::Init (&__ioinit);
+  __comp_dtor .0 = (void (*<Tb9>) (void *)) __comp_dtor ;
+  __cxa_atexit (__comp_dtor .0, &__ioinit, &__dso_handle);
+  goto <D.21008>;
+  <D.21006>:
+  <D.21008>:
+  goto <D.21009>;
+  <D.21004>:
+  <D.21009>:
+}
+
+
+int main() ()
+{
+  int D.21010;
+
+  {
+
+  }
+  D.21010 = 0;
+  return D.21010;
+}
+
+
+void second::test() ()
+{
+  struct basic_ostream & D.21012;
+
+  D.21012 = std::operator<< <std::char_traits<char> > (&cout, "In second Function..");
+  std::basic_ostream<char>::operator<< (D.21012, endl);
+}
+
+
+std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*) [with _Traits = std::char_traits<char>] (struct basic_ostream & __out, const char * __s)
+{
+  int (*__vtbl_ptr_type) (void) * D.21016;
+  int (*__vtbl_ptr_type) (void) * D.21017;
+  int D.21018;
+  unsigned int D.21019;
+  struct basic_ios * D.21020;
+  size_t D.21022;
+  streamsize D.21023;
+  struct basic_ostream & D.21024;
+
+  if (__s == 0B) goto <D.21014>; else goto <D.21015>;
+  <D.21014>:
+  D.21016 = __out->_vptr.basic_ostream;
+  D.21017 = D.21016 + -12;
+  D.21018 = MEM[(int *)D.21017];
+  D.21019 = (unsigned int) D.21018;
+  D.21020 = __out + D.21019;
+  std::basic_ios<char>::setstate (D.21020, 1);
+  goto <D.21021>;
+  <D.21015>:
+  D.21022 = std::char_traits<char>::length (__s);
+  D.21023 = (streamsize) D.21022;
+  std::__ostream_insert<char, std::char_traits<char> > (__out, __s, D.21023);
+  <D.21021>:
+  D.21024 = __out;
+  return D.21024;
+}
+
+
+void std::basic_ios<_CharT, _Traits>::setstate(std::ios_base::iostate) [with _CharT = char, _Traits = std::char_traits<char>, std::ios_base::iostate = std::_Ios_Iostate] (struct basic_ios * const this, iostate __state)
+{
+  iostate D.21026;
+  _Ios_Iostate D.21027;
+
+  D.21026 = std::basic_ios<char>::rdstate (this);
+  D.21027 = std::operator| (D.21026, __state);
+  std::basic_ios<char>::clear (this, D.21027);
+}
+
+
+std::ios_base::iostate std::basic_ios<_CharT, _Traits>::rdstate() const [with _CharT = char, _Traits = std::char_traits<char>, std::ios_base::iostate = std::_Ios_Iostate] (const struct basic_ios * const this)
+{
+  iostate D.21029;
+
+  D.21029 = this->D.18307._M_streambuf_state;
+  return D.21029;
+}
+
+
+std::_Ios_Iostate std::operator|(std::_Ios_Iostate, std::_Ios_Iostate) (_Ios_Iostate __a, _Ios_Iostate __b)
+{
+  _Ios_Iostate D.21031;
+  int __a.1;
+  int __b.2;
+  int D.21034;
+
+  __a.1 = (int) __a;
+  __b.2 = (int) __b;
+  D.21034 = __a.1 | __b.2;
+  D.21031 = (_Ios_Iostate) D.21034;
+  return D.21031;
+}
+
+
+static std::size_t std::char_traits<char>::length(const char_type*) (const char_type * __s)
+{
+  size_t D.21036;
+
+  D.21036 = __builtin_strlen (__s);
+  return D.21036;
+}
+
+
+std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>] (struct basic_ostream * const this, struct __ostream_type & (*<T3675>) (struct __ostream_type &) __pf)
+{
+  struct __ostream_type & D.21038;
+
+  D.21038 = __pf (this);
+  return D.21038;
+}
+
+
+std::basic_ostream<_CharT, _Traits>& std::endl(std::basic_ostream<_CharT, _Traits>&) [with _CharT = char, _Traits = std::char_traits<char>] (struct basic_ostream & __os)
+{
+  struct basic_ostream & D.21041;
+  int (*__vtbl_ptr_type) (void) * D.21042;
+  int (*__vtbl_ptr_type) (void) * D.21043;
+  int D.21044;
+  unsigned int D.21045;
+  struct basic_ios * D.21046;
+  char_type D.21047;
+  int D.21048;
+  struct basic_ostream & D.21049;
+
+  D.21042 = __os->_vptr.basic_ostream;
+  D.21043 = D.21042 + -12;
+  D.21044 = MEM[(int *)D.21043];
+  D.21045 = (unsigned int) D.21044;
+  D.21046 = __os + D.21045;
+  D.21047 = std::basic_ios<char>::widen (D.21046, 10);
+  D.21048 = (int) D.21047;
+  D.21049 = std::basic_ostream<char>::put (__os, D.21048);
+  D.21041 = std::flush<char, std::char_traits<char> > (D.21049);
+  return D.21041;
+}
+
+
+std::basic_ios<_CharT, _Traits>::char_type std::basic_ios<_CharT, _Traits>::widen(char) const [with _CharT = char, _Traits = std::char_traits<char>, std::basic_ios<_CharT, _Traits>::char_type = char] (const struct basic_ios * const this, char __c)
+{
+  char_type D.21054;
+  int D.21055;
+  const struct __ctype_type * const D.21056;
+  const struct ctype & D.21057;
+
+  D.21055 = (int) __c;
+  D.21056 = this->_M_ctype;
+  D.21057 = std::__check_facet<std::ctype<char> > (D.21056);
+  D.21054 = std::ctype<char>::widen (D.21057, D.21055);
+  return D.21054;
+}
+
+
+const _Facet& std::__check_facet(const _Facet*) [with _Facet = std::ctype<char>] (const struct ctype * __f)
+{
+  const struct ctype & D.21063;
+
+  if (__f == 0B) goto <D.21061>; else goto <D.21062>;
+  <D.21061>:
+  std::__throw_bad_cast ();
+  <D.21062>:
+  D.21063 = __f;
+  return D.21063;
+}
+
+
+std::ctype<char>::char_type std::ctype<char>::widen(char) const (const struct ctype * const this, char __c)
+{
+  char D.21065;
+  char_type D.21068;
+  unsigned char __c.3;
+  int D.21070;
+  int (*__vtbl_ptr_type) (void) * D.21071;
+  int (*__vtbl_ptr_type) (void) * D.21072;
+  int (*__vtbl_ptr_type) (void) D.21073;
+  int D.21074;
+
+  D.21065 = this->_M_widen_ok;
+  if (D.21065 != 0) goto <D.21066>; else goto <D.21067>;
+  <D.21066>:
+  __c.3 = (unsigned char) __c;
+  D.21070 = (int) __c.3;
+  D.21068 = this->_M_widen[D.21070];
+  return D.21068;
+  <D.21067>:
+  std::ctype<char>::_M_widen_init (this);
+  D.21071 = this->D.15270._vptr.facet;
+  D.21072 = D.21071 + 24;
+  D.21073 = *D.21072;
+  D.21074 = (int) __c;
+  D.21068 = OBJ_TYPE_REF(D.21073;this->6) (this, D.21074);
+  return D.21068;
+}
+
+
+std::basic_ostream<_CharT, _Traits>& std::flush(std::basic_ostream<_CharT, _Traits>&) [with _CharT = char, _Traits = std::char_traits<char>] (struct basic_ostream & __os)
+{
+  struct basic_ostream & D.21077;
+
+  D.21077 = std::basic_ostream<char>::flush (__os);
+  return D.21077;
+}
+
+
+void first::test() ()
+{
+  struct basic_ostream & D.21080;
+
+  D.21080 = std::operator<< <std::char_traits<char> > (&cout, "In first Function..");
+  std::basic_ostream<char>::operator<< (D.21080, endl);
+}
+
+
+void test() ()
+{
+  struct basic_ostream & D.21082;
+
+  D.21082 = std::operator<< <std::char_traits<char> > (&cout, "In test function..!!");
+  std::basic_ostream<char>::operator<< (D.21082, endl);
+}
+
+
+virtual const char_type* std::ctype<char>::do_narrow(const char_type*, const char_type*, char, char*) const (const struct ctype * const this, const char_type * __lo, const char_type * __hi, char D.15231, char * __dest)
+{
+  int __hi.4;
+  int __lo.5;
+  int D.21086;
+  unsigned int D.21087;
+  const char_type * D.21088;
+
+  __hi.4 = (int) __hi;
+  __lo.5 = (int) __lo;
+  D.21086 = __hi.4 - __lo.5;
+  D.21087 = (unsigned int) D.21086;
+  __builtin_memcpy (__dest, __lo, D.21087);
+  D.21088 = __hi;
+  return D.21088;
+}
+
+
+virtual char std::ctype<char>::do_narrow(std::ctype<char>::char_type, char) const (const struct ctype * const this, char_type __c, char D.15226)
+{
+  char D.21090;
+
+  D.21090 = __c;
+  return D.21090;
+}
+
+
+virtual const char* std::ctype<char>::do_widen(const char*, const char*, std::ctype<char>::char_type*) const (const struct ctype * const this, const char * __lo, const char * __hi, char_type * __dest)
+{
+  int __hi.6;
+  int __lo.7;
+  int D.21094;
+  unsigned int D.21095;
+  const char * D.21096;
+
+  __hi.6 = (int) __hi;
+  __lo.7 = (int) __lo;
+  D.21094 = __hi.6 - __lo.7;
+  D.21095 = (unsigned int) D.21094;
+  __builtin_memcpy (__dest, __lo, D.21095);
+  D.21096 = __hi;
+  return D.21096;
+}
+
+
+virtual std::ctype<char>::char_type std::ctype<char>::do_widen(char) const (const struct ctype * const this, char __c)
+{
+  char_type D.21098;
+
+  D.21098 = __c;
+  return D.21098;
+}
+
+
