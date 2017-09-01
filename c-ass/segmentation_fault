@@ -1,0 +1,86 @@
+#include<iostream>
+using namespace std;
+int main(){
+	int **p,r,c,k=0,r1,c1,**q;
+	cout<<"Enter Row-1::";
+	cin>>r;
+	cout<<"Enter Coloum-1::";
+	cin>>c;
+
+	p=new int*[r];
+	for(int i=0;i<c;i++)
+		p[i]=new int[c];
+
+	cout<<"Enter Row-2::";
+	cin>>r1;
+	cout<<"Enter Coloum-2::";
+	cin>>c1;
+
+	q=new int*[r1];
+	for(int i=0;i<r1;i++)
+		q[i]=new int[c1];
+
+		cout<<"memory created..."<<endl;
+
+	if(c!=r1){
+		cout<<"Create a valid matrix for multiplication..."<<endl;
+	}
+	else{
+
+		int nr,nc;
+		nr=r;nc=c1;
+
+		int **s;
+		s=new int*[nr];
+		for (int i=0;i<nr;i++)
+			s[i]=new int[nc];
+
+		for(int i=0;i<r;i++)
+			for(int j=0;j<c;j++)
+				p[i][j]=k++;
+
+		for(int i=0;i<r1;i++)
+			for(int j=0;j<c1;j++)
+				q[i][j]=k++;
+		cout<<"First Matrix::"<<endl;
+		for(int i=0;i<r;i++){
+			for(int j=0;j<c;j++)
+				cout<<"["<<p[i][j]<<"] ";
+			cout<<endl;
+		}
+
+		cout<<"Second Matrix::"<<endl;
+		for(int i=0;i<r1;i++){
+			for(int j=0;j<c1;j++)
+				cout<<"["<<q[i][j]<<"] ";
+			cout<< endl;
+		}
+		int sum=0,i=0;
+		cout<<"r1:: "<<r1<<" c::"<<c<<" nr::"<<nr<<" nc::"<<nc<<"c1::"<<c1<<"r::"<<r<<endl;
+		for(int k=0;k<nr;k++){
+			for(int j=0;j<nc;j++){
+				cout<<"[  ]";		
+
+				for(int a=0;a<r1;a++)
+					for(int b=0;b<c1;b++){
+						sum=sum+(p[i][b]*q[a][b]);
+					}
+				s[k][j]=sum;
+				i++;
+			}
+				cout<<endl;
+				
+		}
+
+		cout<<"ANS MATRIX::"<<endl;
+		for(int i=0;i<nr;i++){
+			for(int j=0;j<nc;j++)
+				cout<<"["<<s[i][j]<<"] ";
+			cout<<endl;
+		}
+	}
+}
+
+
+
+
